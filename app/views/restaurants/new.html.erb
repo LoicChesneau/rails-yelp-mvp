@@ -1,0 +1,14 @@
+<h1>Restaurants#new</h1>
+<p>Find me in app/views/restaurants/new.html.erb</p>
+<%= link_to "Back to index", restaurants_path, class: "btn btn-primary"%>
+<%= simple_form_for(@restaurant) do |f| %>
+
+  <%= f.error_notification message: 'Something went wrong' %>
+
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :phone_number %>
+  <%= f.input :category, as: :select, collection: ["chinese", "italian", "japanese", "french", "belgian"] %>
+
+  <%= f.button :submit %>
+<% end %>
